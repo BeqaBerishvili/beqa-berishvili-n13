@@ -1,0 +1,12 @@
+@mixin go-flex(
+  $dir: row,
+  $jsf-c: space-between,
+  $align-i: center,
+  $flex-w: wrap
+) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $jsf-c;
+  align-items: $align-i;
+  flex-wrap: $flex-w;
+}

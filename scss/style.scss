@@ -1,0 +1,55 @@
+@use "reset";
+@use "variables";
+@use "placeholders";
+@use "mixins";
+// @import "mixins";
+
+body {
+  background-color: lightgrey;
+
+  main {
+    @include mixins.go-flex(row, space-around);
+    gap: 50px;
+
+    section {
+      @extend %widget-size;
+      @include mixins.go-flex(column, flex-start, flex-start);
+
+      .widget-image {
+        width: 100%;
+        height: 190px;
+        background-image: url("../images/image.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding-top: 30px;
+        padding-left: 40px;
+
+        h1 {
+          color: variables.$primary-color;
+          font-size: variables.$font-size-lg;
+        }
+      }
+
+      .widget-description {
+        width: 100%;
+        height: 170px;
+        padding-top: 70px;
+        padding-left: 40px;
+        background-color: variables.$primary-color;
+
+        p,
+        span {
+          color: variables.$secondary-color;
+          font-size: variables.$font-size-xs;
+        }
+
+        p {
+          width: 240px;
+          line-height: 20px;
+          margin-bottom: 14px;
+        }
+      }
+    }
+  }
+
